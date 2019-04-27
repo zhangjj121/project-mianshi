@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form action="/hr/fang_in/" method="post">
+        {% csrf_token %}
+        <p>
+            录入人：<input type="text" name="put_person">
+        </p>
+        <p>
+            小区：<input type="text" name="xiaoqu">
+        </p>
+        <p>
+            楼号：<input type="text" name="louhao">
+        </p>
+        <p>
+            单元：<input type="text" name="danyuan">
+        </p>
+        <p>
+            房间号：<input type="text" name="fjnumber">
+            <span>{{ message }}</span>
+        </p>
+        <p>
+            朝向：<input type="text" name="chaoxiang">
+        </p>
+        <p>
+            面积：<input type="text" name="mianji">
+        </p>
+        <p>
+            价格：<input type="text" name="price">
+        </p>
+        <p>
+            <input type="submit" value="新建">
+        </p>
+
+    </form>
+</body>
+</html>
