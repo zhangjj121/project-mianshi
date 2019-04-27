@@ -5,7 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <form action="/hr/fang_in/" method="post">
+    <form action="{% url 'hr:f_i' %}" method="post">
         {% csrf_token %}
         <p>
             录入人：<input type="text" name="put_person">
