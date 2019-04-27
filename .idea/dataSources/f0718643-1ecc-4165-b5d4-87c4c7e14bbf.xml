@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mianshi@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.2">
+    <root id="1"/>
+    <schema id="2" parent="1" name="mianshi">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="flask"/>
+    <schema id="4" parent="1" name="flask1"/>
+    <schema id="5" parent="1" name="information_schema"/>
+    <schema id="6" parent="1" name="maoyan"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="sys"/>
+    <schema id="10" parent="1" name="usedcar_db"/>
+    <table id="11" parent="2" name="all_message"/>
+    <table id="12" parent="2" name="password"/>
+    <column id="13" parent="11" name="id">
+      <Position>1</Position>
+      <DataType>int(8)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="11" name="staffname">
+      <Position>2</Position>
+      <DataType>varchar(32)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="11" name="gender">
+      <Position>3</Position>
+      <DataType>enum(&apos;female&apos;, &apos;male&apos;)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="16" parent="11" name="id_number">
+      <Position>4</Position>
+      <DataType>varchar(18)|0</DataType>
+    </column>
+    <column id="17" parent="11" name="telephone">
+      <Position>5</Position>
+      <DataType>varchar(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="18" parent="11" name="region">
+      <Position>6</Position>
+      <DataType>varchar(16)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="19" parent="11" name="education">
+      <Position>7</Position>
+      <DataType>enum(&apos;大专&apos;, &apos;本科&apos;, &apos;研究生&apos;)|0</DataType>
+    </column>
+    <column id="20" parent="11" name="school">
+      <Position>8</Position>
+      <DataType>varchar(128)|0</DataType>
+    </column>
+    <column id="21" parent="11" name="graduatet_date">
+      <Position>9</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <index id="22" parent="11" name="id_number">
+      <ColNames>id_number</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="23" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="24" parent="11" name="id_number">
+      <ColNames>id_number</ColNames>
+      <UnderlyingIndexName>id_number</UnderlyingIndexName>
+    </key>
+    <column id="25" parent="12" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="26" parent="12" name="user_id">
+      <Position>2</Position>
+      <DataType>int(8)|0</DataType>
+    </column>
+    <column id="27" parent="12" name="password">
+      <Position>3</Position>
+      <DataType>varchar(8)|0</DataType>
+      <DefaultExpression>&apos;111111&apos;</DefaultExpression>
+    </column>
+    <index id="28" parent="12" name="user_id">
+      <ColNames>user_id</ColNames>
+    </index>
+    <key id="29" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="30" parent="12" name="password_ibfk_1">
+      <ColNames>user_id</ColNames>
+      <RefSchemaName>mianshi</RefSchemaName>
+      <RefTableName>all_message</RefTableName>
+      <RefColNames>id</RefColNames>
+      <OnUpdate>cascade</OnUpdate>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+  </database-model>
+</dataSource>
